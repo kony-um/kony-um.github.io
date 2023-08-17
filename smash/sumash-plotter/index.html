@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smash Bros Character Mapping</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <div class="container">
+        <h2>Smash Plotterとは</h2>
+        <p>大乱闘スマッシュブラザーズシリーズのファイターを、<br>
+            好き嫌いや得意苦手などの任意の2軸に沿ってマッピングできるサービスです。</p>
+        <h3>使い方</h3>
+        <ol>
+            <li>表のタイトルや2つの軸の設定をする</li>
+            <li>ファイターをドラッグしてマッピングする(全て使う必要はありません)</li>
+            <li>ダウンロードボタンを押して画像をダウンロードする</li>
+            <li>ダウンロードした画像をSNSなどでシェアする</li>
+        </ol>
+    
+        <h2 class="label">プロットを作る</h2>
+        <div id="print-area">
+            <b>Smash Plotter</b>
+            <div id="mappingArea" class="area">
+                <div class="axis horizontal"></div>
+                <div class="axis vertical"></div>
+                <div class="label top">好き</div>
+                <div class="label bottom">嫌い</div>
+                <div class="label left">苦手</div>
+                <div class="label right">得意</div>
+            </div>
+            <div style="width:500px;">
+                <p id="service-url">https://kony-um.github.io/smash/smash-plotter</p>    
+            </div>
+        </div>
+
+        <button id="submit" onclick="downloadImage()">ダウンロード</button>
+
+        <div id="nonImageArea" class="area">
+            <img src="images/mario.png" class="draggable" draggable="true">
+            <img src="images/donkey.png" class="draggable" draggable="true">
+            <img src="images/link.png" class="draggable" draggable="true">
+            <img src="images/samus.png" class="draggable" draggable="true">
+            <img src="images/samusd.png" class="draggable" draggable="true">
+            <img src="images/yoshi.png" class="draggable" draggable="true">
+            <img src="images/kirby.png" class="draggable" draggable="true">
+            <img src="images/fox.png" class="draggable" draggable="true">
+            <img src="images/pikachu.png" class="draggable" draggable="true">
+            <img src="images/luigi.png" class="draggable" draggable="true">
+            <img src="images/ness.png" class="draggable" draggable="true">
+            <img src="images/captain.png" class="draggable" draggable="true">
+            <img src="images/purin.png" class="draggable" draggable="true">
+            <img src="images/peach.png" class="draggable" draggable="true">
+            <img src="images/daisy.png" class="draggable" draggable="true">
+            <img src="images/koopa.png" class="draggable" draggable="true">
+            <img src="images/ice_climber.png" class="draggable" draggable="true">
+            <img src="images/sheik.png" class="draggable" draggable="true">
+            <img src="images/zelda.png" class="draggable" draggable="true">
+            <img src="images/mariod.png" class="draggable" draggable="true">
+            <img src="images/pichu.png" class="draggable" draggable="true">
+            <img src="images/falco.png" class="draggable" draggable="true">
+            <img src="images/marth.png" class="draggable" draggable="true">
+            <img src="images/lucina.png" class="draggable" draggable="true">
+            <img src="images/younglink.png" class="draggable" draggable="true">
+            <img src="images/ganon.png" class="draggable" draggable="true">
+            <img src="images/mewtwo.png" class="draggable" draggable="true">
+            <img src="images/roy.png" class="draggable" draggable="true">
+            <img src="images/chrom.png" class="draggable" draggable="true">
+            <img src="images/gamewatch.png" class="draggable" draggable="true">
+            <img src="images/metaknight.png" class="draggable" draggable="true">
+            <img src="images/pit.png" class="draggable" draggable="true">
+            <img src="images/pitb.png" class="draggable" draggable="true">
+            <img src="images/szerosuit.png" class="draggable" draggable="true">
+            <img src="images/wario.png" class="draggable" draggable="true">
+            <img src="images/snake.png" class="draggable" draggable="true">
+            <img src="images/ike.png" class="draggable" draggable="true">
+            <img src="images/ptrainer.png" class="draggable" draggable="true">
+            <img src="images/diddy.png" class="draggable" draggable="true">
+            <img src="images/lucas.png" class="draggable" draggable="true">
+            <img src="images/sonic.png" class="draggable" draggable="true">
+            <img src="images/dedede.png" class="draggable" draggable="true">
+            <img src="images/pikmin.png" class="draggable" draggable="true">
+            <img src="images/lucario.png" class="draggable" draggable="true">
+            <img src="images/robot.png" class="draggable" draggable="true">
+            <img src="images/toonlink.png" class="draggable" draggable="true">
+            <img src="images/wolf.png" class="draggable" draggable="true">
+            <img src="images/murabito.png" class="draggable" draggable="true">
+            <img src="images/rockman.png" class="draggable" draggable="true">
+            <img src="images/wiifit.png" class="draggable" draggable="true">
+            <img src="images/rosetta.png" class="draggable" draggable="true">
+            <img src="images/littlemac.png" class="draggable" draggable="true">
+            <img src="images/gekkouga.png" class="draggable" draggable="true">
+            <img src="images/palutena.png" class="draggable" draggable="true">
+            <img src="images/pacman.png" class="draggable" draggable="true">
+            <img src="images/reflet.png" class="draggable" draggable="true">
+            <img src="images/shulk.png" class="draggable" draggable="true">
+            <img src="images/koopajr.png" class="draggable" draggable="true">
+            <img src="images/duckhunt.png" class="draggable" draggable="true">
+            <img src="images/ryu.png" class="draggable" draggable="true">
+            <img src="images/ken.png" class="draggable" draggable="true">
+            <img src="images/cloud.png" class="draggable" draggable="true">
+            <img src="images/kamui.png" class="draggable" draggable="true">
+            <img src="images/bayonetta.png" class="draggable" draggable="true">
+            <img src="images/inkling.png" class="draggable" draggable="true">
+            <img src="images/ridley.png" class="draggable" draggable="true">
+            <img src="images/simon.png" class="draggable" draggable="true">
+            <img src="images/richter.png" class="draggable" draggable="true">
+            <img src="images/krool.png" class="draggable" draggable="true">
+            <img src="images/shizue.png" class="draggable" draggable="true">
+            <img src="images/gaogaen.png" class="draggable" draggable="true">
+            <img src="images/packun.png" class="draggable" draggable="true">
+            <img src="images/jack.png" class="draggable" draggable="true">
+            <img src="images/brave.png" class="draggable" draggable="true">
+            <img src="images/buddy.png" class="draggable" draggable="true">
+            <img src="images/dolly.png" class="draggable" draggable="true">
+            <img src="images/master.png" class="draggable" draggable="true">
+            <img src="images/tantan.png" class="draggable" draggable="true">
+            <img src="images/pickel.png" class="draggable" draggable="true">
+            <img src="images/edge.png" class="draggable" draggable="true">
+            <img src="images/eflame.png" class="draggable" draggable="true">
+            <img src="images/elight.png" class="draggable" draggable="true">
+            <img src="images/demon.png" class="draggable" draggable="true">
+            <img src="images/trail.png" class="draggable" draggable="true">
+            <img src="images/miifighter.png" class="draggable" draggable="true">
+            <img src="images/miiswordsman.png" class="draggable" draggable="true">
+            <img src="images/miigunner.png" class="draggable" draggable="true">
+        </div>
+
+        <a id="download"></a>
+        <footer>
+            <p><a href="https://www.smashbros.com/ja_JP/" target="_blank">大乱闘スマッシュブラザーズ</a>は、任天堂株式会社様の登録商標であり、<br>
+                当サイトは個人が運営する非公式のWebサービスです。<br>
+                任天堂株式会社様、他関連企業様とは一切関係ありませんので、予めご了承ください。</p>
+                <p>Smash Plotter All rights reserved.</p>
+        </footer>    
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
