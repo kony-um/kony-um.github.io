@@ -6,7 +6,6 @@ body {
 }
 
 .container {
-    border: 1px solid black;
     padding: 20px;
     width: 600px;
     word-wrap: break-word;
@@ -24,8 +23,12 @@ body {
 #print-area {
     display: grid;
     place-items: center;
+    padding: 8px;
     width: 100%;
+}
 
+#print-container {
+    width: 500px;
 }
 
 #mappingArea {
@@ -62,19 +65,18 @@ body {
 
 #mappingArea .draggable {
     cursor: pointer;
-    position: absolute;  // これを追加
-    z-index: 10; /* 追加 */
-
+    position: absolute;
+    z-index: 10;
 }
 
 .axis.horizontal {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 70%;
+    width: 90%;
     height: 1px;
     background-color: black;
-    transform: translateX(-50%);  /* 横方向の中心を基準に移動 */
+    transform: translateX(-50%);
 }
 
 .axis.vertical {
@@ -82,45 +84,64 @@ body {
     top: 50%;
     left: 50%;
     width: 1px;
-    height: 80%;
+    height: 90%;
     background-color: black;
-    transform: translateY(-50%);  /* 縦方向の中心を基準に移動 */
+    transform: translateY(-50%);
 }
 
-.label.top,
-.label.bottom {
-    position: absolute;
-    width: 100%;
+.borderless-input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    line-height: 1.5;
+    z-index: 100;
+}
+
+/* 入力時のアンダーラインを表示する場合 */
+.borderless-input:focus {
+    border-bottom: 2px solid black;
+}
+
+.borderless-input.title {
+    font-size: 16px;
     text-align: center;
+    margin-bottom: 8px;
+    width: 100%;
 }
 
-.label.top {
+.borderless-input.top, .borderless-input.bottom {
+    position: absolute;
+    width: 45%;
+    left: 52%;
+    text-align: left;
+}
+
+.borderless-input.top {
     top: 10px;
 }
 
-.label.bottom {
+.borderless-input.bottom {
     bottom: 10px;
 }
 
-.label.left,
-.label.right {
+.borderless-input.left, .borderless-input.right {
     position: absolute;
-    height: 100%;
+    top: 50%;
     display: flex;
-    align-items: center;
     word-wrap: break-word;
-    width:64px;
-    justify-content: center;  /* 水平方向の中央寄せ */
-    align-items: center;      /* 垂直方向の中央寄せ (必要な場合) */
-
+    width:40%;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(8px);
 }
 
-.label.left {
+.borderless-input.left {
     left: 10px;
 }
 
-.label.right {
+.borderless-input.right {
     right: 10px;
+    text-align: right;
 }
 
 footer p {

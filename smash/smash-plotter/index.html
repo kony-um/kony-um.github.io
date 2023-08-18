@@ -16,31 +16,41 @@
     <div class="container">
         <h2>Smash Plotterとは</h2>
         <p>大乱闘スマッシュブラザーズシリーズのファイターを、<br>
-            好き嫌いや得意苦手などの任意の2軸に沿ってマッピングできるサービスです。</p>
+            好き嫌いや得意苦手などの任意の2軸に沿ってマッピングし<br>
+            画像としてダウンロードすることができるサービスです。</p>
         <h3>使い方</h3>
         <ol>
             <li>表のタイトルや2つの軸の設定をする</li>
-            <li>ファイターをドラッグしてマッピングする(全て使う必要はありません)</li>
+            <ul>
+                <li>文字の部分をクリックしたら文言を変更できます</li>
+                <li>タイトルは必須ではありません</li>
+            </ul>
+            <li>ファイターをドラッグしてマッピングする</li>
+            <ul>
+                <li>全てのファイターを使う必要はありません</li>
+            </ul>
             <li>ダウンロードボタンを押して画像をダウンロードする</li>
             <li>ダウンロードした画像をSNSなどでシェアする</li>
         </ol>
     
         <h2 class="label">プロットを作る</h2>
         <div id="print-area">
-            <b>Smash Plotter</b>
-            <div id="mappingArea" class="area">
-                <div class="axis horizontal"></div>
-                <div class="axis vertical"></div>
-                <div class="label top">好き</div>
-                <div class="label bottom">嫌い</div>
-                <div class="label left">苦手</div>
-                <div class="label right">得意</div>
-            </div>
-            <div style="width:500px;">
-                <p id="service-url">https://kony-um.github.io/smash/smash-plotter</p>    
+            <div id="print-container">
+                <b id="service-name">Smash Plotter</b>
+                <input class="title borderless-input" value="そのファイターを使うのは">
+                <div id="mappingArea" class="area">
+                    <div class="axis horizontal"></div>
+                    <div class="axis vertical"></div>
+                    <input type="text" class="top borderless-input" placeholder="テキストを入力してください" value="好き">
+                    <input type="text" class="bottom borderless-input" placeholder="テキストを入力してください" value="嫌い">
+                    <input type="text" class="left borderless-input" placeholder="テキストを入力してください" value="苦手">
+                    <input type="text" class="right borderless-input" placeholder="テキストを入力してください" value="得意">
+                </div>
+                <div style="width:500px;">
+                    <p id="service-url">https://kony-um.github.io/smash/smash-plotter</p>    
+                </div>    
             </div>
         </div>
-
         <button id="submit" onclick="downloadImage()">ダウンロード</button>
 
         <div id="nonImageArea" class="area">
