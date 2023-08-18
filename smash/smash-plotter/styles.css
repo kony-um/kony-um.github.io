@@ -33,10 +33,12 @@ body {
 
 #mappingArea {
     height: 450px;
+    border-radius: 16px;
 }
 
 #nonImageArea {
     height: 350px;
+    border-radius: 16px;
 }
 
 #service-url {
@@ -105,7 +107,7 @@ body {
 .borderless-input.title {
     font-size: 16px;
     text-align: center;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
     width: 100%;
 }
 
