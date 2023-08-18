@@ -10,28 +10,27 @@
 </head>
 
 <body>
-    <header>
-
-    </header>
     <div class="container">
-        <h2>Smash Plotterとは</h2>
-        <p>大乱闘スマッシュブラザーズシリーズのファイターを、<br>
-            好き嫌いや得意苦手などの任意の2軸に沿ってマッピングし<br>
-            画像としてダウンロードすることができるサービスです。</p>
-        <h3>使い方</h3>
-        <ol>
-            <li>表のタイトルや2つの軸の設定をする</li>
-            <ul>
-                <li>文字の部分をクリックしたら文言を変更できます</li>
-                <li>タイトルは必須ではありません</li>
-            </ul>
-            <li>ファイターをドラッグしてマッピングする</li>
-            <ul>
-                <li>全てのファイターを使う必要はありません</li>
-            </ul>
-            <li>ダウンロードボタンを押して画像をダウンロードする</li>
-            <li>ダウンロードした画像をSNSなどでシェアする</li>
-        </ol>
+        <div id="description">
+            <h2>Smash Plotterとは</h2>
+            <p>大乱闘スマッシュブラザーズシリーズのファイターを、<br>
+                好き嫌いや得意苦手などの任意の2軸に沿ってマッピングし<br>
+                画像としてダウンロードすることができるサービスです。</p>
+            <h3>使い方</h3>
+            <ol>
+                <li>表のタイトルや2つの軸の設定をする</li>
+                <ul>
+                    <li>文字をクリックしたら軸の名称を変更できます</li>
+                    <li>タイトルは必須ではありません</li>
+                </ul>
+                <li>ファイターをドラッグしてマッピングする</li>
+                <ul>
+                    <li>全てのファイターを使う必要はありません</li>
+                </ul>
+                <li>ダウンロードボタンを押して画像をダウンロードする</li>
+                <li>ダウンロードした画像をSNSなどでシェアする</li>
+            </ol>    
+        </div>
     
         <h2 class="label">プロットを作る</h2>
         <div id="print-area">
@@ -46,9 +45,7 @@
                     <input type="text" class="left borderless-input" placeholder="テキストを入力してください" value="苦手">
                     <input type="text" class="right borderless-input" placeholder="テキストを入力してください" value="得意">
                 </div>
-                <div style="width:500px;">
-                    <p id="service-url">https://kony-um.github.io/smash/smash-plotter</p>    
-                </div>    
+                <p id="service-url">https://kony-um.github.io/smash/smash-plotter</p>    
             </div>
         </div>
         <button id="submit" onclick="downloadImage()">ダウンロード</button>
