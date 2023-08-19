@@ -89,9 +89,35 @@ mappingArea.addEventListener('drop', e => {
 
 function downloadImage() {
     html2canvas(document.getElementById('print-area')).then(canvas => {
+        const downloadBtn = document.getElementById("download");
+        // 2回目用に一通り初期化する
+        downloadBtn.removeAttribute("target");
+        downloadBtn.removeAttribute("download")
+
         let base64 = canvas.toDataURL('image/png');
-        $("#download").attr("href", base64);
-        $("#download").attr("download", "captured.png");
+        if (window.innerWidth <= 480) {
+            //スマホの場合
+            const blob = dataURLToBlob(base64);
+            const url = URL.createObjectURL(blob);
+            
+            downloadBtn.href = url;
+            downloadBtn.target = '_blank';    
+        } else {
+            // PCの場合
+            downloadBtn.href = base64;
+            downloadBtn.download = "captured.png";
+        }
         $("#download")[0].click();
     });
+
+    function dataURLToBlob(dataurl) {
+        const arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1];
+        const bstr = atob(arr[1]);
+        let n = bstr.length;
+        const u8arr = new Uint8Array(n);
+        while (n--) {
+            u8arr[n] = bstr.charCodeAt(n);
+        }
+        return new Blob([u8arr], { type: mime });
+    }    
 }
