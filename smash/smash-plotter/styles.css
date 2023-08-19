@@ -56,9 +56,21 @@ ol {
     margin-bottom: 20px;
 }
 
+#button-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+}
+
+#submit, a > button {
+    margin: 0 16px 8px;
+    flex: 1;  /* 各ボタンが均等な幅を持つようにする */
+}
+
 #submit {
     align-items: center;
-    margin-bottom: 16px;
     position: relative;
     text-align: center;
 }
