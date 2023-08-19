@@ -101,6 +101,7 @@ ol {
 
 .borderless-input {
     border: none;
+    padding: 0;
     outline: none;
     background-color: transparent;
     line-height: 2;
