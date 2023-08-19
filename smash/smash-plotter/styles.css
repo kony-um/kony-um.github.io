@@ -85,8 +85,9 @@ ol {
 }
 
 #nonImageArea .draggable {
+    position: relative;
     cursor: pointer;
-    float: left;
+    z-index: 10;
 }
 
 #mappingArea .draggable {

@@ -17,7 +17,7 @@ draggableItems.forEach(item => {
         draggedItem = e.target;
         let touch = e.touches[0];
         startX = touch.clientX - parseFloat(draggedItem.style.left || 0);
-        startY = touch.clientY - parseFloat(draggedItem.style.top || 0);        
+        startY = touch.clientY - parseFloat(draggedItem.style.top || 0);
         e.preventDefault();
     });
     item.addEventListener('touchmove', e => {
@@ -109,15 +109,14 @@ function downloadImage() {
         }
         $("#download")[0].click();
     });
-
-    function dataURLToBlob(dataurl) {
-        const arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1];
-        const bstr = atob(arr[1]);
-        let n = bstr.length;
-        const u8arr = new Uint8Array(n);
-        while (n--) {
-            u8arr[n] = bstr.charCodeAt(n);
-        }
-        return new Blob([u8arr], { type: mime });
-    }    
 }
+function dataURLToBlob(dataurl) {
+    const arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1];
+    const bstr = atob(arr[1]);
+    let n = bstr.length;
+    const u8arr = new Uint8Array(n);
+    while (n--) {
+        u8arr[n] = bstr.charCodeAt(n);
+    }
+    return new Blob([u8arr], { type: mime });
+}    
