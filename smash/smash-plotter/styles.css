@@ -83,7 +83,7 @@ ol {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 90%;
+    width: 100%;
     height: 1px;
     background-color: black;
     transform: translateX(-50%);
@@ -94,9 +94,51 @@ ol {
     top: 50%;
     left: 50%;
     width: 1px;
-    height: 90%;
+    height: 100%;
     background-color: black;
     transform: translateY(-50%);
+}
+
+.auxiliary-line {
+    position: absolute;
+    width: 1px;
+}
+
+/* 縦の補助線 */
+.auxiliary-line.vertical.minus {
+    top: 50%;
+    transform: translateY(-50%);
+    left: 25%;
+    height: 100%;
+    border-left: 2px dashed rgba(0, 0, 0, 0.2);
+}
+
+.auxiliary-line.vertical.plus {
+    top: 50%;
+    transform: translateY(-50%);
+    left: 75%;
+    height: 100%;
+    border-left: 2px dashed rgba(0, 0, 0, 0.2);
+}
+
+
+/* 横の補助線 */
+.auxiliary-line.horizontal.minus{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 25%;
+    width: 100%;
+    border-top: 2px dashed rgba(0, 0, 0, 0.2);
+}
+
+.auxiliary-line.horizontal.plus{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 75%;
+    width: 100%;
+    border-top: 2px dashed rgba(0, 0, 0, 0.2);
 }
 
 .borderless-input {
