@@ -6,8 +6,12 @@ body {
     width: 100%;
 }
 
+#main_visual {
+    width: 100%;
+}
+
 .container {
-    padding: 20px;
+    padding: 8px;
     width: 600px;
     word-wrap: break-word;
     display: grid;
