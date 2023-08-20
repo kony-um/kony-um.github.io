@@ -88,6 +88,7 @@ mappingArea.addEventListener('drop', e => {
 });
 
 function downloadImage() {
+    $(".borderless-input").css("z-index", 100);
     html2canvas(document.getElementById('print-area')).then(canvas => {
         const downloadBtn = document.getElementById("download");
         // 2回目用に一通り初期化する
@@ -108,6 +109,7 @@ function downloadImage() {
             downloadBtn.download = "captured.png";
         }
         $("#download")[0].click();
+        $(".borderless-input").css("z-index", 0);
     });
 }
 function dataURLToBlob(dataurl) {
